@@ -5,6 +5,7 @@
             <!--- Profile --->
 
             <div class="card">
+            
             <img src="https://media.licdn.com/dms/image/C5103AQFnUKVQYXJfqA/profile-displayphoto-shrink_200_200/0?e=1558569600&v=beta&t=kXGlEqEmUc7ekOcREL7f8e7L4MEnZTLf6g4YS4eWvBg" alt="John" style="width:100%">
             <h4 class="first_name">
             <?php echo e($user->first_name); ?>
@@ -49,11 +50,12 @@
                     <p class="tweet"><?php echo e($post->body); ?></p>
                     <div class="interaction row">
                     <div class="col-md-6">
-                        <a href="#" class="like col-md-2"><i class="far fa-thumbs-up"></i>
-<!--
-<?php echo e(Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : '<i class="fas fa-thumbs-up"></i>' : '<i class="fas fa-thumbs-up"></i>'); ?>
+                        <a href="#" class="like col-md-2">
 
--->
+<?php
+ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : '<i class="fas fa-thumbs-up"></i>' : '<i class="far fa-thumbs-up"></i>'
+ ?>
+
 </a> 
                         <a href="#" class="like  col-md-2  col-md-offset-1">
                         
